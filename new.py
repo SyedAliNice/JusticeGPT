@@ -32,7 +32,7 @@ llm = ChatGroq(model="gemma2-9b-it", api_key=groq_api)
 st.set_page_config(page_title="JusticeBot", page_icon="⚖️", layout="centered")
 
 # Center the title using HTML
-st.markdown("<h1 style='text-align: center;'>⚖️ JusticeBot</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: black;'>⚖️ JusticeBot</h1>", unsafe_allow_html=True)
 
 # Background image via CSS (URL version)
 st.markdown(
