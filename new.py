@@ -82,7 +82,7 @@ if uploaded_file is not None:
     
     # Create prompt template
     prompt_template = ChatPromptTemplate.from_messages([
-        ("system", "You are a helpful assistant that answers questions based on the provided document context and if you will not able to answer the question from file, answer it according to your intelligence. but keep everything brief"),
+        ("system", "You are a helpful assistant of a judge which will help me understand the partition and you will answers questions based on the provided partition document context and if you will not able to answer the question from file, look for the answer again and if you are still not able to answer the question, tell them the information is not provided in the document. Just must be accurate"),
         ("user", "Context: {context}\nQuestion: {question}")
     ])
     
