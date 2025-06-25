@@ -140,11 +140,4 @@ if uploaded_file is not None:
             result = qa_chain({"query": input_text})
         
         st.subheader("Answer:")
-        st.markdown(
-            f"""
-            <div style="background-color: rgba(40, 167, 69, 0.85); padding: 15px; border-radius: 8px; margin-top: 10px;">
-                <pre style="color: white; font-size: 16px; font-family: inherit;">{}</pre>
-            </div>
-            """,
-            unsafe_allow_html=True
-        )
+        
