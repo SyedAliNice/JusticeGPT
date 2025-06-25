@@ -30,6 +30,40 @@ llm = ChatGroq(model="gemma2-9b-it", api_key=groq_api)
 
 # Must be the first Streamlit command
 st.set_page_config(page_title="JusticeBot", page_icon="⚖️", layout="centered")
+st.markdown("""
+    <style>
+    .stApp {
+        color: white !important;
+    }
+
+    /* Change label text (like "Upload your PDF file", etc.) */
+    label, .stTextInput > label, .css-1aumxhk, .css-2trqyj, .st-b8 {
+        color: white !important;
+    }
+
+    /* File uploader filename text */
+    .uploadedFileName, .stMarkdown p {
+        color: white !important;
+    }
+
+    /* Subheaders like "Answer" */
+    h3, h4, .stSubheader {
+        color: white !important;
+    }
+
+    /* Buttons and input borders (optional styling) */
+    .stTextInput input {
+        color: white !important;
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .stTextInput label {
+        color: white !important;
+    }
+
+    </style>
+""", unsafe_allow_html=True)
+
 
 # Center the title using HTML
 st.markdown("<h1 style='text-align: center;'>⚖️ JusticeBot</h1>", unsafe_allow_html=True)
@@ -108,8 +142,8 @@ if uploaded_file is not None:
         st.subheader("Answer:")
         st.markdown(
             f"""
-            <div style="background-color:#28a745; padding:15px; border-radius:8px">
-                <p style="color:white; font-size:16px;">{result["result"]}</p>
+            <div style="background-color: rgba(40, 167, 69, 0.85); padding: 15px; border-radius: 8px; margin-top: 10px;">
+                <pre style="color: white; font-size: 16px; font-family: inherit;">{safe_result}</pre>
             </div>
             """,
             unsafe_allow_html=True
