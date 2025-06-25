@@ -32,7 +32,7 @@ llm = ChatGroq(model="gemma2-9b-it", api_key=groq_api)
 st.set_page_config(page_title="JusticeBot", page_icon="⚖️", layout="centered")
 
 # Center the title using HTML
-st.markdown("<h1 style='text-align: center; color: white;'>⚖️ JusticeBot</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center;'>⚖️ JusticeBot</h1>", unsafe_allow_html=True)
 
 # Background image via CSS (URL version)
 st.markdown(
@@ -52,7 +52,7 @@ st.markdown(
 
 
 
-st.markdown("<h4 style='text-align: center; color: white;'>Your Virtual Legal Assistant — Fair, Fast, and Smart</h4>", unsafe_allow_html=True)
+st.markdown("<h4 style='text-align: center; color: #F8F8F8;'>Your Virtual Legal Assistant — Fair, Fast, and Smart</h4>", unsafe_allow_html=True)
 st.markdown("---")
 
 # Allow the user to upload a PDF file
@@ -106,4 +106,11 @@ if uploaded_file is not None:
             result = qa_chain({"query": input_text})
         
         st.subheader("Answer:")
-        st.write(result["result"])
+        st.markdown(
+            f"""
+            <div style="background-color:#28a745; padding:15px; border-radius:8px">
+                <p style="color:white; font-size:16px;">{result["result"]}</p>
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
