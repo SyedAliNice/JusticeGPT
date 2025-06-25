@@ -62,10 +62,8 @@ if uploaded_file is not None:
     text_splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=80)
     documents = text_splitter.split_documents(docs)
     
-    #openai_api = "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"
     
-    # Create vector store and retriever
-    #embeddings = OpenAIEmbeddings(api_key=openai_api)
+    
     embeddings = GoogleGenerativeAIEmbeddings(model = "models/embedding-001")
     vector_db = FAISS.from_documents(documents, embeddings)
     retriever = vector_db.as_retriever()
@@ -101,9 +99,3 @@ if uploaded_file is not None:
         
         st.subheader("Answer:")
         st.write(result["result"])
-        
-        # Optionally, display source documents
-        # st.subheader("Sources:")
-        # for i, doc in enumerate(result["source_documents"], 1):
-        #     st.write(f"Source {i}:")
-        #     st.write(doc.page_content[:500] + "..." if len(doc.page_content) > 500 else doc.page_content)
