@@ -13,10 +13,18 @@ import google.generativeai as genai
 from langchain_google_genai import ChatGoogleGenerativeAI
 
 # Load environment variables
-load_dotenv()
+# load_dotenv()
 
-os.getenv("GOOGLE_API_KEY")
-genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
+# os.getenv("GOOGLE_API_KEY")
+# genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
+
+# Access secrets
+google_api_key = st.secrets["GOOGLE_API_KEY"]
+groq_api = st.secrets["GROQ_API_KEY"]
+
+# Configure APIs
+genai.configure(api_key=google_api_key)
+llm = ChatGroq(model="gemma2-9b-it", api_key=groq_api_key)
 
 
 
@@ -69,7 +77,7 @@ if uploaded_file is not None:
     retriever = vector_db.as_retriever()
     
     # Initialize LLM
-    groq_api = "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"
+    # groq_api = "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"
     llm = ChatGroq(model="gemma2-9b-it", api_key=groq_api)
     
     # Create prompt template
