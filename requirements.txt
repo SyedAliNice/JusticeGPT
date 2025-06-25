@@ -1,3 +1,4 @@
+html
 langchain_groq
 langchain_core
 streamlit
@@ -9,4 +10,3 @@ langchain-google-genai
 google-generativeai
 pymupdf
 faiss-cpu
-html
