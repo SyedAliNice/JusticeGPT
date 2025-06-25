@@ -24,7 +24,7 @@ groq_api = st.secrets["GROQ_API_KEY"]
 
 # Configure APIs
 genai.configure(api_key=google_api_key)
-llm = ChatGroq(model="gemma2-9b-it", api_key=groq_api_key)
+llm = ChatGroq(model="gemma2-9b-it", api_key=groq_api)
 
 
 
