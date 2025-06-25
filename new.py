@@ -77,7 +77,7 @@ if uploaded_file is not None:
     retriever = vector_db.as_retriever()
     
     # Initialize LLM
-    # groq_api = "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"
+
     llm = ChatGroq(model="gemma2-9b-it", api_key=groq_api)
     
     # Create prompt template
