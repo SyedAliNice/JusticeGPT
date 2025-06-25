@@ -52,7 +52,7 @@ st.markdown(
 
 
 
-st.markdown("<h4 style='text-align: center; color: #F8F8F8;'>Your Virtual Legal Assistant — Fair, Fast, and Smart</h4>", unsafe_allow_html=True)
+st.markdown("<h4 style='text-align: center; color: white;'>Your Virtual Legal Assistant — Fair, Fast, and Smart</h4>", unsafe_allow_html=True)
 st.markdown("---")
 
 # Allow the user to upload a PDF file
