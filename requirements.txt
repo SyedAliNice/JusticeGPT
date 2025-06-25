@@ -7,3 +7,4 @@ langchain_community
 langchain
 langchain-google-genai
 google-generativeai
+pymupdf
