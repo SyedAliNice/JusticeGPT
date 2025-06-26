@@ -9,4 +9,4 @@ langchain-google-genai
 google-generativeai
 pymupdf
 faiss-cpu
-html
+
