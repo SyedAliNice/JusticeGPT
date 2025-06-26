@@ -122,17 +122,7 @@ if uploaded_file is not None:
     if input_text:
         with st.spinner("Searching for answer..."):
             result = qa_chain({"query": input_text})
-        st.markdown("### ✅ **Answer:**")
-st.markdown(
-    f"""
-    <div class="custom-answer">
-        {result["result"]}
-    </div>
-    """,
-    unsafe_allow_html=True
-)
-    
-        
-        #st.subheader("Answer:")
-        #st.write(result["result"])
+            
+        st.subheader("Answer:")
+        st.write(result["result"])
         
