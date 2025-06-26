@@ -32,19 +32,26 @@ llm = ChatGroq(model="gemma2-9b-it", api_key=groq_api)
 st.set_page_config(page_title="JusticeBot", page_icon="⚖️", layout="centered")
 st.markdown("""
     <style>
-    /* Make user input text black */
+    /* Make all Streamlit text white */
+    html, body, [class*="st-"] {
+        color: white !important;
+    }
+
+    /* Set input box text color to black */
     .stTextInput input {
         color: black !important;
         background-color: white !important;
     }
 
-    /* Make result/answer text black */
+    /* Set answer/result text to white as well */
     .custom-answer {
-        color: black !important;
+        color: white !important;
         font-size: 16px;
+        padding: 12px;
     }
     </style>
 """, unsafe_allow_html=True)
+
 
 
 
