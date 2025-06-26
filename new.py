@@ -43,11 +43,12 @@ st.markdown("""
         background-color: white !important;
     }
 
-    /* Set answer/result text to white as well */
+    /* Set answer/result text to black with white background */
     .custom-answer {
-        color: white !important;
+        color: black !important;
         font-size: 16px;
         padding: 12px;
+        background-color: white !important;
     }
     </style>
 """, unsafe_allow_html=True)
@@ -131,5 +132,5 @@ if uploaded_file is not None:
             result = qa_chain({"query": input_text})
             
         st.subheader("Answer:")
-        st.write(result["result"])
+        st.markdown(f"<div class='custom-answer'>{result['result']}</div>", unsafe_allow_html=True)
         
