@@ -134,17 +134,12 @@ if uploaded_file is not None:
     
     # User inputs their question
     input_text = st.text_input("Enter your question:")
-    st.markdown("""
-    <style>
-    input {
-        color: black !important;
-    }
-    </style>
-""", unsafe_allow_html=True)
+    
 
     if input_text:
         with st.spinner("Searching for answer..."):
             result = qa_chain({"query": input_text})
         
         st.subheader("Answer:")
+        st.write(result["result"])
         
