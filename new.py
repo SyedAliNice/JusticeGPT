@@ -53,6 +53,16 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
+st.markdown("""
+    <style>
+    /* Change ONLY the uploader box background color */
+    [data-testid="stFileUploader"] > div:first-child {
+        background-color: #d3d3d3 !important;  /* Light gray */
+        border-radius: 10px;
+        padding: 10px;
+    }
+    </style>
+""", unsafe_allow_html=True)
 
 
 
