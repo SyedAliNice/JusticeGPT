@@ -55,9 +55,28 @@ st.markdown("""
 
 st.markdown("""
     <style>
-    /* Change ONLY the uploader box background color */
-    [data-testid="stFileUploader"] > div:first-child {
-        background-color: #000000
+    /* Make all Streamlit text white */
+    html, body, [class*="st-"] {
+        color: white !important;
+    }
+
+    /* Set input box text color to black */
+    .stTextInput input {
+        color: black !important;
+        background-color: white !important;
+    }
+
+    /* Set result answer text to black with white background */
+    .custom-answer {
+        color: black !important;
+        font-size: 16px;
+        padding: 12px;
+        background-color: white !important;
+    }
+
+    /* Change file uploader box background to black */
+    div[data-testid="stFileUploader"] > div {
+        background-color: #000000 !important;
         border-radius: 10px;
         padding: 10px;
     }
