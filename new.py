@@ -54,33 +54,28 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 st.markdown("""
-    <style>
-    /* Make all Streamlit text white */
-    html, body, [class*="st-"] {
-        color: white !important;
+<style>
+    .stFileUploader > div > div > div > div {
+        background-color: #e0e0e0 !important;
+        border: 2px dashed #999999 !important;
     }
-
-    /* Set input box text color to black */
-    .stTextInput input {
-        color: black !important;
-        background-color: white !important;
+    
+    .stFileUploader > div > div > div > div:hover {
+        background-color: #d5d5d5 !important;
+        border-color: #777777 !important;
     }
-
-    /* Set result answer text to black with white background */
-    .custom-answer {
-        color: black !important;
-        font-size: 16px;
-        padding: 12px;
-        background-color: white !important;
+    
+    /* Alternative targeting method */
+    div[data-testid="stFileUploader"] > div > div > div > div {
+        background-color: #e0e0e0 !important;
+        border: 2px dashed #999999 !important;
     }
-
-    /* Change file uploader box background to black */
-    div[data-testid="stfile_uploader"] > div {
-        background-color: #000000 !important;
-        border-radius: 10px;
-        padding: 10px;
+    
+    div[data-testid="stFileUploader"] > div > div > div > div:hover {
+        background-color: #d5d5d5 !important;
+        border-color: #777777 !important;
     }
-    </style>
+</style>
 """, unsafe_allow_html=True)
 
 
