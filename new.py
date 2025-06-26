@@ -149,7 +149,7 @@ if uploaded_file is not None:
     )
     
     # User inputs their question
-    input_text = st.text_input("Enter your question:")
+    input_text = st.text_input("Ask your Query:")
     
 
     if input_text:
