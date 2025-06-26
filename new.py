@@ -32,37 +32,35 @@ llm = ChatGroq(model="gemma2-9b-it", api_key=groq_api)
 st.set_page_config(page_title="JusticeBot", page_icon="⚖️", layout="centered")
 st.markdown("""
     <style>
-    .stApp {
-        color: white !important;
+    /* Make all input and output text black */
+    html, body, [class*="st-"] {
+        color: black !important;
     }
 
-    /* Change label text (like "Upload your PDF file", etc.) */
-    label, .stTextInput > label, .css-1aumxhk, .css-2trqyj, .st-b8 {
-        color: white !important;
+    /* Input fields */
+    input, textarea, .stTextInput input {
+        color: black !important;
+        background-color: white !important;
     }
 
-    /* File uploader filename text */
-    .uploadedFileName, .stMarkdown p {
-        color: white !important;
+    /* Placeholder text in input */
+    input::placeholder, textarea::placeholder {
+        color: #555 !important;
+        opacity: 1 !important;
     }
 
-    /* Subheaders like "Answer" */
-    h3, h4, .stSubheader {
-        color: white !important;
+    /* Success boxes, result text, etc. */
+    .stMarkdown p, .stMarkdown span, .stMarkdown div {
+        color: black !important;
     }
 
-    /* Buttons and input borders (optional styling) */
-    .stTextInput input {
-        color: white !important;
-        background-color: rgba(255, 255, 255, 0.1);
+    /* File name and other elements */
+    .css-1cpxqw2 {  /* file uploader text */
+        color: black !important;
     }
-
-    .stTextInput label {
-        color: white !important;
-    }
-
     </style>
 """, unsafe_allow_html=True)
+
 
 
 # Center the title using HTML
