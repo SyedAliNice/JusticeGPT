@@ -139,7 +139,24 @@ if uploaded_file is not None:
     if input_text:
         with st.spinner("Searching for answer..."):
             result = qa_chain({"query": input_text})
+            st.markdown("""
+    <style>
+    /* Target text input styling */
+    @media (prefers-color-scheme: light) {
+        input {
+            color: black !important;
+        }
+    }
+    @media (prefers-color-scheme: dark) {
+        input {
+            color: white !important;
+        }
+    }
+    </style>
+""", unsafe_allow_html=True)
+
         
         st.subheader("Answer:")
         st.write(result["result"])
+        st.markdown(result["result"])
         
