@@ -32,31 +32,16 @@ llm = ChatGroq(model="gemma2-9b-it", api_key=groq_api)
 st.set_page_config(page_title="JusticeBot", page_icon="⚖️", layout="centered")
 st.markdown("""
     <style>
-    /* Make all input and output text black */
-    html, body, [class*="st-"] {
-        color: black !important;
-    }
-
-    /* Input fields */
-    input, textarea, .stTextInput input {
+    /* Make user input text black */
+    .stTextInput input {
         color: black !important;
         background-color: white !important;
     }
 
-    /* Placeholder text in input */
-    input::placeholder, textarea::placeholder {
-        color: #555 !important;
-        opacity: 1 !important;
-    }
-
-    /* Success boxes, result text, etc. */
-    .stMarkdown p, .stMarkdown span, .stMarkdown div {
+    /* Make result/answer text black */
+    .custom-answer {
         color: black !important;
-    }
-
-    /* File name and other elements */
-    .css-1cpxqw2 {  /* file uploader text */
-        color: black !important;
+        font-size: 16px;
     }
     </style>
 """, unsafe_allow_html=True)
@@ -137,7 +122,17 @@ if uploaded_file is not None:
     if input_text:
         with st.spinner("Searching for answer..."):
             result = qa_chain({"query": input_text})
+        st.markdown("### ✅ **Answer:**")
+st.markdown(
+    f"""
+    <div class="custom-answer">
+        {result["result"]}
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+    
         
-        st.subheader("Answer:")
-        st.write(result["result"])
+        #st.subheader("Answer:")
+        #st.write(result["result"])
         
