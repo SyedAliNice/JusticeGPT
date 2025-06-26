@@ -57,7 +57,7 @@ st.markdown("""
     <style>
     /* Change ONLY the uploader box background color */
     [data-testid="stFileUploader"] > div:first-child {
-        background-color: #d3d3d3 !important;  /* Light gray */
+        background-color: #a9a9a9 !important;  /* Light gray */
         border-radius: 10px;
         padding: 10px;
     }
