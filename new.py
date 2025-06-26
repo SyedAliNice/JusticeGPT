@@ -75,7 +75,7 @@ st.markdown("""
     }
 
     /* Change file uploader box background to black */
-    div[data-testid="st.file_uploader"] > div {
+    div[data-testid="stfile_uploader"] > div {
         background-color: #000000 !important;
         border-radius: 10px;
         padding: 10px;
