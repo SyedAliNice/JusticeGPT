@@ -43,15 +43,35 @@ st.markdown("""
         background-color: white !important;
     }
 
+    /* Style the file uploader label */
+    .stFileUploader > label {
+        color: white !important;
+    }
+
+    /* Style the file uploader input box */
+    .stFileUploader .css-1cpxqw2, .stFileUploader .css-13sdv15 {
+        background-color: white !important;
+        color: black !important;
+        border: 2px solid #4B0082 !important;
+        border-radius: 8px !important;
+    }
+
+    /* Optional hover effect for the file uploader */
+    .stFileUploader:hover .css-13sdv15 {
+        border-color: #6a0dad !important;
+    }
+
     /* Set answer/result text to black with white background */
     .custom-answer {
         color: black !important;
         font-size: 16px;
         padding: 12px;
         background-color: white !important;
+        border-radius: 8px;
     }
     </style>
 """, unsafe_allow_html=True)
+)
 
 
 
