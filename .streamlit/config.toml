@@ -1,0 +1,29 @@
+
+This sets the app's base theme to dark mode. Alternatively, you can configure other theme-related options such as primary color, background color, and text color to further customize the theme[^8^].
+
+### Theme Options in the Settings Menu
+
+When running the app locally, users can click on the menu icon (☰) in the top-right corner of the app, select "Settings," and then choose the desired theme from the "Theme" section. After deploying the app to Streamlit Cloud, the "Edit active theme" button will no longer appear in the "Settings" menu. However, if you have defined a custom theme in the `config.toml` file, it will be displayed as a "Custom Theme" in the theme selector and applied by default[^5^].
+
+### Dynamically Switching Themes via Code
+
+While Streamlit does not officially support dynamic theme switching through buttons or code, some workarounds exist. For example, you can use `st._config.set_option()` to modify the theme settings and trigger a page reload using `st.rerun()` to apply the new theme. However, this approach may affect all users and is not recommended for production environments[^7^].
+
+### Limitations of Theme Customization on Streamlit Cloud
+
+If your app is deployed on Streamlit Cloud, the theme editor menu will not be available. When configuring themes, ensure that the `config.toml` file is correctly placed in the `.streamlit` directory of your project. Additionally, some theme settings may not be fully compatible with the Streamlit Cloud environment. If issues arise, refer to the Streamlit documentation or community forums for solutions[^5^].
+
+### Other Notes
+
+Streamlit's default theme is a light theme with a white background and black text. If the `base` parameter is not set in the `config.toml` file, the app will default to the light theme. Users can also choose to "Use system setting," allowing Streamlit to automatically adopt the operating system's theme (light or dark) and adjust colors accordingly. However, this may not work for some browsers and Linux distributions[^1^][^4^].
+
+Below is an example of a `config.toml` file for a dark theme:
+
+```toml
+[theme]
+primaryColor = "#FF4B4B"
+backgroundColor = "#0E1117"
+secondaryBackgroundColor = "#262730"
+textColor = "#FAFAFA"
+font = "sans serif"
+base = "dark"
